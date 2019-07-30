@@ -3,10 +3,12 @@ export default function() {
     teams: {
       anaheim: {
         capsuleIds: ['ducks', 'angels'],
+        id: 'anaheim',
         name: 'Anaheim',
       },
       losAngeles: {
         capsuleIds: ['dodgers'],
+        id: 'losAngeles',
         name: 'Los Angeles',
       },
     },

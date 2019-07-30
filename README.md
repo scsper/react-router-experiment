@@ -1,6 +1,6 @@
 - Implement the following routes:
 
-  - /{team}/capsules
+  - /{team}
   - /{team}/{capsule}
   - /{team}/{capsule}/versions
   - /{team}/{capsule}/config
