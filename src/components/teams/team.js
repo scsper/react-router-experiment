@@ -1,9 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Capsules from '../capsules'
 
 class Team extends React.Component {
   render() {
-    return <div>This is a team {this.props.team.name}</div>
+    return (
+      <div>
+        <h1>{this.props.team.name}</h1>
+
+        <Capsules teamId={this.props.team.id} url={this.props.match.url} />
+      </div>
+    )
   }
 }
 

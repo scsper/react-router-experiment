@@ -7,9 +7,9 @@ class Teams extends React.Component {
   render() {
     return (
       <div>
-        <Route path="/" exact component={TeamNav} />
-        <Route path="/:teamId" component={TeamNav} />
-        <Route path="/:teamId" component={Team} />
+        <TeamNav />
+
+        <Route path="/:teamId" exact component={Team} />
       </div>
     )
   }
