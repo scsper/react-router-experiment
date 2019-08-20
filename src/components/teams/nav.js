@@ -6,7 +6,7 @@ class TeamNav extends React.Component {
   render() {
     const options = this.props.teams.map(team => (
       <li key={team.id}>
-        <Link to={`/${team.id}`}>{team.name}</Link>
+        <Link to={`/teams/${team.id}`}>{team.name}</Link>
       </li>
     ))
 

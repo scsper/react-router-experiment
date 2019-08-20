@@ -2,11 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-class Capsules extends React.Component {
+class CapsuleList extends React.Component {
   renderCapsules() {
     return this.props.capsuleIds.map(capsuleId => (
-      <li>
-        <Link to={`${this.props.teamId}/${capsuleId}`}>{capsuleId}</Link>
+      <li key={capsuleId}>
+        <Link to={`/teams/${this.props.teamId}/${capsuleId}`}>{capsuleId}</Link>
       </li>
     ))
   }
@@ -27,4 +27,4 @@ function mapStateToProps(state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps)(Capsules)
+export default connect(mapStateToProps)(CapsuleList)
