@@ -1,11 +1,11 @@
 import React from 'react'
-import TeamNav from '../team-nav'
+import TeamPicker from '../team-picker'
 
 class Teams extends React.Component {
   render() {
     return (
       <div>
-        <TeamNav match={this.props.match} />
+        <TeamPicker match={this.props.match} />
       </div>
     )
   }

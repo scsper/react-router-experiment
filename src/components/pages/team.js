@@ -1,17 +1,25 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Capsule from './capsule'
 import CapsuleList from '../capsule-list'
+import People from '../people'
+import TeamInfo from '../team-info'
+import TeamNav from '../team-nav'
 
 class Team extends React.Component {
   render() {
     return (
       <div>
+        <TeamNav match={this.props.match} />
         <h1>{this.props.team.name}</h1>
 
-        <CapsuleList match={this.props.match} teamId={this.props.team.id} />
-        <Route path={this.props.match.url + '/:capsuleId'} exact component={Capsule} />
+        <Route path={this.props.match.url + '/people'} exact component={People} />
+        <Route
+          path={this.props.match.url + '/capsules'}
+          exact
+          render={routeProps => <CapsuleList {...routeProps} teamId={this.props.match.params.teamId} />}
+        />
+        <Route path={this.props.match.url + '/info'} exact component={TeamInfo} />
       </div>
     )
   }

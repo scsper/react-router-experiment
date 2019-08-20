@@ -17,7 +17,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/docs" exact component={Docs} />
           <Route path="/teams" exact component={Teams} />
-          <Route path="/teams/:teamId" exact component={Team} />
+          <Route path="/teams/:teamId" component={Team} />
           <Route path="/teams/:teamId/capsules/:capsuleId" exact component={Capsule} />
           <Route component={() => '404 Not Found'} />
         </Switch>

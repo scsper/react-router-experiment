@@ -1,29 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 
-class TeamNav extends React.Component {
-  render() {
-    const options = this.props.teams.map(team => (
-      <li key={team.id}>
-        <Link to={this.props.match.url + `/${team.id}`}>{team.name}</Link>
-      </li>
-    ))
+import './index.css'
 
-    return (
-      <div>
-        <ul>{options}</ul>
-
-        {/* <Route path="/teams/:teamId/:capsuleId" exact component={Capsule} /> */}
+export default function TeamNav({ match }) {
+  return (
+    <div className="team-nav-container">
+      <div className="team-nav-link">
+        <Link to={match.url + '/capsules'}>Capsules</Link>
       </div>
-    )
-  }
+      <div className="team-nav-link">
+        <Link to={match.url + '/people'}>People</Link>
+      </div>
+      <div className="team-nav-link">
+        <Link to={match.url + '/info'}>Team Info</Link>
+      </div>
+    </div>
+  )
 }
-
-function mapStateToProps(state) {
-  return {
-    teams: Object.values(state.teams),
-  }
-}
-
-export default connect(mapStateToProps)(TeamNav)

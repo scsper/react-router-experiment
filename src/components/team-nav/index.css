@@ -1,0 +1,7 @@
+.team-nav-container {
+  display: flex;
+}
+
+.team-nav-link {
+  padding: 12px;
+}

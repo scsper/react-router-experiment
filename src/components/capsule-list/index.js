@@ -20,6 +20,10 @@ class CapsuleList extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
+  console.log('capsule list props')
+
+  console.log(ownProps)
+
   const teamId = ownProps.teamId
 
   return {
