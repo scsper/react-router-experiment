@@ -1,0 +1,7 @@
+.capsule-nav-container {
+  display: flex;
+}
+
+.capsule-nav-link {
+  padding: 12px;
+}
