@@ -19,13 +19,13 @@ class Team extends React.Component {
           render={routeProps => <Redirect to={routeProps.match.url + '/capsules'} />}
         />
 
+        <Route path={this.props.match.url + '/info'} exact component={TeamInfo} />
         <Route path={this.props.match.url + '/people'} exact component={People} />
         <Route
           path={this.props.match.url + '/capsules'}
           exact
           render={routeProps => <CapsuleList {...routeProps} teamId={this.props.match.params.teamId} />}
         />
-        <Route path={this.props.match.url + '/info'} exact component={TeamInfo} />
       </div>
     )
   }

@@ -8,6 +8,8 @@ import Docs from './components/pages/docs'
 import PageNav from './components/page-nav'
 import './app.css'
 
+// `/teams/:teamId/capsules/:capsuleId` needs to be first in the route list because it's more specific.
+// if we try to put `exact`, then the app gives us 404 not found
 function App() {
   return (
     <Router>
