@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Capsule from './capsule'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Capsules extends React.Component {
   renderCapsules() {
@@ -21,8 +20,10 @@ class Capsules extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
+  const teamId = ownProps.teamId
+
   return {
-    capsuleIds: state.teams[ownProps.teamId].capsuleIds,
+    capsuleIds: state.teams[teamId].capsuleIds,
   }
 }
 

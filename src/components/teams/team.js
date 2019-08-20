@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Capsules from '../capsules'
+import CapsuleList from './capsule-list'
 
 class Team extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class Team extends React.Component {
       <div>
         <h1>{this.props.team.name}</h1>
 
-        <Capsules teamId={this.props.team.id} url={this.props.match.url} />
+        <CapsuleList teamId={this.props.team.id} />
       </div>
     )
   }
@@ -16,6 +16,7 @@ class Team extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   const teamId = ownProps.match.params.teamId
+
   return {
     team: state.teams[teamId],
   }
