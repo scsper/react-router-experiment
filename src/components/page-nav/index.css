@@ -1,0 +1,9 @@
+.page-nav-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.page-nav-link {
+  padding: 12px;
+}

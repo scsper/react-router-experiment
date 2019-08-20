@@ -1,16 +1,17 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import PageNav from '../page-nav'
-import CapsuleList from './capsule-list'
+import Capsule from './capsule'
+import CapsuleList from '../capsule-list'
 
 class Team extends React.Component {
   render() {
     return (
       <div>
-        <PageNav />
         <h1>{this.props.team.name}</h1>
 
-        <CapsuleList teamId={this.props.team.id} />
+        <CapsuleList match={this.props.match} teamId={this.props.team.id} />
+        <Route path={this.props.match.url + '/:capsuleId'} exact component={Capsule} />
       </div>
     )
   }

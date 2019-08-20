@@ -1,12 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import './index.css'
+
 export default function PageNav() {
   return (
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/docs">Docs</Link>
-      <Link to="/teams">Teams</Link>
+    <div className="page-nav-container">
+      <div className="page-nav-link">
+        <Link to="/">Home</Link>
+      </div>
+      <div className="page-nav-link">
+        <Link to="/docs">Docs</Link>
+      </div>
+      <div className="page-nav-link">
+        <Link to="/teams">Teams</Link>
+      </div>
     </div>
   )
 }

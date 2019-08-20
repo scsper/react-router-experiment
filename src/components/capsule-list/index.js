@@ -6,7 +6,7 @@ class CapsuleList extends React.Component {
   renderCapsules() {
     return this.props.capsuleIds.map(capsuleId => (
       <li key={capsuleId}>
-        <Link to={`/teams/${this.props.teamId}/${capsuleId}`}>{capsuleId}</Link>
+        <Link to={this.props.match.url + `/capsules/${capsuleId}`}>{capsuleId}</Link>
       </li>
     ))
   }

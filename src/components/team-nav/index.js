@@ -6,11 +6,17 @@ class TeamNav extends React.Component {
   render() {
     const options = this.props.teams.map(team => (
       <li key={team.id}>
-        <Link to={`/teams/${team.id}`}>{team.name}</Link>
+        <Link to={this.props.match.url + `/${team.id}`}>{team.name}</Link>
       </li>
     ))
 
-    return <ul>{options}</ul>
+    return (
+      <div>
+        <ul>{options}</ul>
+
+        {/* <Route path="/teams/:teamId/:capsuleId" exact component={Capsule} /> */}
+      </div>
+    )
   }
 }
 
