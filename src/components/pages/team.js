@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import CapsuleList from '../capsule-list'
 import People from '../people'
@@ -12,6 +12,12 @@ class Team extends React.Component {
       <div>
         <TeamNav match={this.props.match} />
         <h1>{this.props.team.name}</h1>
+
+        <Route
+          path={this.props.match.url}
+          exact
+          render={routeProps => <Redirect to={routeProps.match.url + '/capsules'} />}
+        />
 
         <Route path={this.props.match.url + '/people'} exact component={People} />
         <Route
